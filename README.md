@@ -22,7 +22,8 @@
 
 ## 📚 学习笔记目录
 
-- [HTML / CSS / JS 基础](./01_html_css_js/)
+- [Git 基础](./01_git/)
+- [HTML / CSS / JS 基础](./02_html_css_js/)
 - [React / Next.js 入门](./02_react_nextjs/)
 - [Tailwind CSS](./03_tailwind_css/)
 - [Node.js 与 API](./04_node_api/)
