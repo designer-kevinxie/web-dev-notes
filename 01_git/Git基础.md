@@ -64,8 +64,30 @@ git pull && git add . && git commit -m "update" && git push
 
 一行命令完成初始化、提交、命名分支、绑定远程、首次推送。
 
+
 ```bash
 git init && git add . && git commit -m "first commit" && git branch -M main && git remote add origin https://github.com/用户名/仓库名.git && git push -u origin main
+```
+
+4️⃣ ❤️ 一键切换分支并推送当前更改
+```bash
+git checkout -b dev && git add . && git commit -m "start dev branch" && git push -u origin dev
+```
+5️⃣ ❤️ 一键回到主分支并拉取最新版本
+```bash
+git checkout main && git pull
+```
+6️⃣ ❤️ 一键查看当前状态和日志
+
+显示当前更改状态和最近 5 条提交记录。
+```bash
+git status && git log --oneline -5
+```
+7️⃣ ❤️一键清理多余分支（删除本地已合并分支）
+
+删除除主分支外的、已经合并完的旧分支（进阶操作）。
+```bash
+git branch --merged | egrep -v "(^\*|main|master)" | xargs git branch -d
 ```
 
 ## 4. 📂 初始化与克隆
