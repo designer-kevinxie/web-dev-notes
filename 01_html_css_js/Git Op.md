@@ -1,28 +1,81 @@
 #  Git 常用命令速查表
 
-## git 安装
+- [Git 常用命令速查表](#git-常用命令速查表)
+  - [1. git 安装](#1-git-安装)
+  - [2. 🧱 基础配置](#2--基础配置)
+  - [3. ✅ 常用组合](#3--常用组合)
+  - [4. 📂 初始化与克隆](#4--初始化与克隆)
+  - [5. 💾 查看状态与历史](#5--查看状态与历史)
+  - [6. ✍️ 添加与提交](#6-️-添加与提交)
+  - [7. 🔄 分支操作](#7--分支操作)
+    - [为什么需要分支](#为什么需要分支)
+    - [💡 小技巧：开发新功能时，通常流程是：](#-小技巧开发新功能时通常流程是)
+  - [8. ☁️ 远程仓库](#8-️-远程仓库)
+    - [作用：](#作用)
+    - [效果：](#效果)
+    - [场景：](#场景)
+    - [clone 对比表](#clone-对比表)
+  - [9. 🧑‍💻 多人协作流程](#9--多人协作流程)
+    - [1️⃣ 克隆远程仓库到本地](#1️⃣-克隆远程仓库到本地)
+    - [2️⃣ 创建功能分支](#2️⃣-创建功能分支)
+    - [3️⃣ 本地开发并提交](#3️⃣-本地开发并提交)
+    - [4️⃣ 推送分支到远程](#4️⃣-推送分支到远程)
+    - [5️⃣ 发起 Pull Request / Merge Request](#5️⃣-发起-pull-request--merge-request)
+    - [6️⃣ 拉取最新主分支更新](#6️⃣-拉取最新主分支更新)
+    - [7️⃣ 删除功能分支（可选）](#7️⃣-删除功能分支可选)
+  - [10. Git 常用命令缩写 \& 英文全称 \& 中文释义](#10-git-常用命令缩写--英文全称--中文释义)
+    
+
+
+## 1. git 安装
 https://brew.sh/ 
 
 `brew install git`
 
-## 🧱 基础配置
+## 2. 🧱 基础配置
 ```bash
 git config --global user.name "你的名字"
 git config --global user.email "你的邮箱"
 git config --list          # 查看配置
 ```
-## ✅ 常用组合
+## 3. ✅ 常用组合
+| 场景         | 常用命令                                                          |
+| ---------- | ------------------------------------------------------------- |
+| 初始化项目      | `git init` → `git add .` → `git commit -m "first commit"`     |
+| 上传到 GitHub | `git remote add origin ...` → `git push -u origin main`       |
+| 修改文件后更新    | `git add .` → `git commit -m "update something"` → `git push` |
+| 下载别人项目     | `git clone 仓库地址`                                              |
+| 获取别人更新     | `git pull`                                                    |
+| 新功能开发      | `git checkout -b feature/login`    
+
+1️⃣ ❤️ 一键提交并推送
+
+添加所有修改 → 提交 → 推送到远程。(单人)
 ```bash
 git add . && git commit -m "update" && git push
 ```
-## 📂 初始化与克隆
+2️⃣ ❤️ 一键拉取并更新（先拉取最新再推送）
+
+适合在多人协作时，确保先同步远程改动再推送自己的更新。
+```bash
+git pull && git add . && git commit -m "update" && git push
+```
+3️⃣ ❤️ 一键初始化新项目并推送到 GitHub（在项目刚创建时使用）
+
+一行命令完成初始化、提交、命名分支、绑定远程、首次推送。
+
+```bash
+git init && git add . && git commit -m "first commit" && git branch -M main && git remote add origin https://github.com/用户名/仓库名.git && git push -u origin main
+```
+
+## 4. 📂 初始化与克隆
 ```bash
 git init              # 初始化一个新的本地仓库
 git clone <仓库地址>        # 克隆远程仓库
 git clone <地址> <目录名>    # 克隆到指定目录
 ```
 
-## 💾 查看状态与历史
+## 5. 💾 查看状态与历史
 ```bash 
 git status                 # 查看当前文件状态
 git log                    # 查看提交历史
@@ -30,7 +83,7 @@ git log --oneline --graph  # 简洁图形化显示提交记录
 git diff                   # 查看修改内容
 ```
 
-## ✍️ 添加与提交
+## 6. ✍️ 添加与提交
 ```bash
 git add <文件>             # 添加单个文件
 git add .                  # 添加所有修改的文件
@@ -38,7 +91,7 @@ git commit -m "提交信息"     # 提交
 git commit -am "提交信息"    # 添加并提交（仅限已跟踪文件）
 ```
 
-## 🔄 分支操作
+## 7. 🔄 分支操作
 ```bash
 git branch                 # 查看分支
 git branch <分支名>         # 创建新分支
@@ -68,7 +121,7 @@ git merge feature/新功能
 
 这样 主分支始终稳定，新功能在独立分支上完成。
 
-## 远程仓库
+## 8. ☁️ 远程仓库
 ```bash
 git remote -v              # 查看远程仓库
 git remote add origin <地址> # 添加远程仓库
@@ -81,7 +134,7 @@ git fetch                  # 获取远程更新（不合并）
 
 ### 作用：
 
-- 给已有本地仓库 绑定一个远程仓库
+- 给已有本地仓库 绑定一个远程仓库（GitHub先创建一个空仓库）
 
 - 可以给远程仓库起一个名字（通常是 `origin`）
 
@@ -103,7 +156,7 @@ git remote add origin https://github.com/username/project.git
 
 - 你本地先建好了仓库 (`git init`)
 
-- 想把它和远程仓库关联
+- 想把它和远程仓库关联（GitHub先创建一个空仓库）
 
 ### clone 对比表
 | 命令                            | 场景      | 做了什么          | 远程关联              |
@@ -112,7 +165,7 @@ git remote add origin https://github.com/username/project.git
 | `git remote add <name> <url>` | 本地已有仓库  | 只添加远程仓库地址     | 手动添加，需要 push/pull |
 
 
-## 多人协作流程
+## 9. 🧑‍💻 多人协作流程
 ### 1️⃣ 克隆远程仓库到本地
 
 第一次参与项目，需要把远程仓库复制到本地。
@@ -258,3 +311,25 @@ git push origin --delete feature/新功能  # 删除远程分支
 - 保持分支整洁。
 
 - 避免混乱。
+
+## 10. Git 常用命令缩写 & 英文全称 & 中文释义
+| 缩写         | 英文全称                     | 中文意思           | 常见命令示例                                 |
+| ---------- | ------------------------ | -------------- | -------------------------------------- |
+| `-m`       | `--message`              | 提交说明、备注信息      | `git commit -m "Initial commit"`       |
+| `-u`       | `--set-upstream`         | 设置上游（默认远程追踪分支） | `git push -u origin main`              |
+| `-b`       | `--branch`               | 分支名称           | `git checkout -b dev`（创建并切换到 dev 分支）   |
+| `-d`       | `--delete`               | 删除             | `git branch -d dev`（删除分支）              |
+| `-D`       | （大写）同 `--delete --force` | 强制删除分支         | `git branch -D dev`                    |
+| `-a`       | `--all`                  | 所有（分支、提交、文件等）  | `git branch -a`（查看所有分支）                |
+| `-v`       | `--verbose`              | 显示详细信息         | `git remote -v`（查看远程仓库详细地址）            |
+| `-f`       | `--force`                | 强制执行           | `git push -f origin main`（强制推送）        |
+| `-r`       | `--remote`               | 远程             | `git branch -r`（查看远程分支）                |
+| `-p`       | `--patch`                | 打补丁模式（逐行选择）    | `git add -p`（选择性添加修改）                  |
+| `-q`       | `--quiet`                | 安静模式（不输出日志）    | `git pull -q`                          |
+| `-n`       | `--dry-run`              | 试运行（不执行，只显示结果） | `git push --dry-run`                   |
+| `--amend`  | amend（修改）                | 修改最近一次提交       | `git commit --amend`                   |
+| `--hard`   | hard（彻底重置）               | 强制重置（包括文件内容）   | `git reset --hard HEAD~1`              |
+| `--soft`   | soft（保留修改）               | 仅回退提交，不改动文件    | `git reset --soft HEAD~1`              |
+| `--global` | global（全局）               | 对所有项目生效        | `git config --global user.name "Name"` |
+| `--local`  | local（当前仓库）              | 仅对当前仓库生效       | `git config --local user.name "Name"`  |
+| `--help`   | help（帮助）                 | 查看命令说明         | `git status --help`                    |
