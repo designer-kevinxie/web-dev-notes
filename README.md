@@ -22,13 +22,14 @@
 
 ## 📚 学习笔记目录
 
-- [Git 基础](./01_git/)
-- [HTML / CSS / JS 基础](./02_html_css_js/)
-- [React / Next.js 入门](./02_react_nextjs/)
-- [Tailwind CSS](./03_tailwind_css/)
-- [Node.js 与 API](./04_node_api/)
-- [数据库与部署](./05_database_deploy/)
-- [综合项目](./06_final_project/)
+- [Git 基础](./git/)
+- [HTML / CSS / JS 基础](./html_css_js/)
+- [React / Next.js 入门](./react_nextjs/)
+- [Tailwind CSS](./tailwind_css/)
+- [Node.js 与 API](./node_api/)
+- [python & flask](./python_flask)
+- [数据库与部署](./database_deploy/)
+- [综合项目](./final_project/)
 
 ---
 
