@@ -75,3 +75,28 @@ f.save("./uploads/" + f.filename)
 | 文件名来自外部 API 或第三方输入 | ✅ 建议用                 |
 
 
+# 改进 secure_filename，让中文保留
+
+Werkzeug 的 secure_filename 默认只保留 ASCII 字母。
+你可以写一个小函数，保留中文和常见字符：
+```bash
+import re
+
+def safe_filename(filename):
+    # 保留中文、英文、数字、下划线、点、横线
+    return re.sub(r'[^0-9A-Za-z\u4e00-\u9fa5._-]', '_', filename)
+
+```
+然后替换原来的：
+
+```bash
+song_filename = safe_filename(song.filename)
+```
+
+这样：
+
+"夏天的风（完整版）.flac" → "夏天的风_完整版_.flac"
+
+"My Song.mp3" → "My_Song.mp3"
+
+会安全又美观 ✅

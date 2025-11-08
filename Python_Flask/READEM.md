@@ -22,3 +22,5 @@
 [flask secure_filename 安全命名](flask_secure_filename.md)
 
 [app.config](app_config.md)
+
+[python try except](python_try_except.md)
