@@ -1,3 +1,10 @@
+---
+title: HTML与JavaScript的交互接口
+date: 2025-10-28
+tags: [js,html,web]
+---
+
+
 ## 🧩 HTML 与 JavaScript 的交互接口（重点 + 细节 + Checklist）
 
 ### 一、核心知识点

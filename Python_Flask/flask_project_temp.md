@@ -1,6 +1,13 @@
+---
+title: 标准Flask项目模板(一键脚本)
+date: 2025-10-28
+tags: [python,flask,VPS]
+---
+
+
+# 标准 Flask 项目模板(一键脚本)
 **标准 Flask 项目模板**，带基础目录结构、路由、模板（HTML）、静态文件（CSS/JS），还能直接运行。
 
----
 
 ## 🧱 项目结构概览
 
@@ -138,6 +145,4 @@ python run.py
 | 环境变量  | `.env` 文件                  | 可结合 `python-dotenv` 使用   |
 | 部署    | Gunicorn / Docker          | 后期可以迁移                   |
 
----
 
-是否希望我下一步帮你加上 **模板继承（base.html + block system）**，方便日后扩展多个页面？

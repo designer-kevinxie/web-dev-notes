@@ -1,3 +1,9 @@
+---
+title: Flask安装（虚拟）
+date: 2025-10-28
+tags: [python,flask,VPS]
+---
+
 强烈建议你进行任何 Python 项目开发时，始终使用**虚拟环境 (Virtual Environment)**。
 
 创建虚拟环境：

@@ -1,3 +1,11 @@
+---
+title: 拿到一台新VPS该做的事
+date: 2025-10-28
+tags: [vps,linux]
+---
+
+# 拿到一台新VPS该做的事
+
 ### 通过 SSH 远程连接
 打开你电脑上的终端（Terminal），输入以下命令（记得把 <你的IP地址> 换成你刚拿到的那一串数字）：
 
@@ -70,3 +78,27 @@ systemctl restart nginx
 
 为什么要用： 每次你修改了 Nginx 的配置文件（比如配置反向代理到你的 Python 程序），必须执行这个命令，修改才会生效。
 
+### 颁发“安全证书” (HTTPS) 🔒
+我们用 Certbot 这个工具来免费申请证书，它会自动帮你改好剩下的配置。
+
+#### 安装 Certbot：
+
+```Bash
+apt install certbot python3-certbot-nginx -y
+```
+#### 一键申请证书：
+
+```Bash
+certbot --nginx -d kevinx.cc -d www.kevinx.cc
+```
+跟着提示走：
+
+```Enter email address```: 输入你的邮箱（用来接收证书过期提醒）。
+
+```Terms of Service```: 输入 Y 同意。
+
+```Share email```: 输入 N (不想收广告)。
+
+关键一步： 它可能会问你是否要 Redirect (重定向)。
+
+一定要选 2 (Redirect)。这就意味着如果有人访问 ```http```，会自动变成 ```https```。

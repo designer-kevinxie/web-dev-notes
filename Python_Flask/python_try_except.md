@@ -1,4 +1,11 @@
-太好了 👍
+---
+title: python try except 语法
+date: 2025-10-28
+tags: [python]
+---
+
+
+# python try except 语法
 `try: ... except: ...` 是 Python 里**错误处理（异常处理）**的核心语法之一，
 可以让程序在遇到错误时**不中断运行**，而是**优雅地处理问题**。
 

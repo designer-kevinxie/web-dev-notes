@@ -1,6 +1,7 @@
-非常好 👍
-以下是 **《2025 年版 HTML + CSS 前端基础巩固总览 Checklist》**，这是一份适合你整理笔记与复习使用的“核心知识与实战检查表”，覆盖了从 HTML 元信息到 CSS 动画的关键点。
-
+---
+title: 2025年版HTML+CSS总览Checklist
+date: 2025-10-28
+tags: [html,css,web]
 ---
 
 ## 🧭 2025 年版 HTML + CSS 总览 Checklist

@@ -1,7 +1,10 @@
-非常好的问题 👍
-这其实是 Python 入门里最关键的概念之一。我们慢慢来讲清楚。
-
 ---
+title: python的类(class)
+date: 2025-10-28
+tags: [python]
+---
+
+# python的类(class)
 
 ## 🧩 一句话理解：
 

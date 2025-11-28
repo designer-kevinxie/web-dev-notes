@@ -1,3 +1,10 @@
+---
+title: python with open as f 详解
+date: 2025-10-28
+tags: [python]
+---
+
+# python with open as f 详解
 
 
 ## 🎯 一句话理解：
@@ -5,7 +12,6 @@
 > `with open(...) as f:`
 > 表示：**打开文件 → 临时获得一个文件对象 → 自动关闭文件（即使出错也会关掉）**
 
----
 
 ## 🧩 基本语法：
 

@@ -1,3 +1,9 @@
+---
+title: HTML可访问性&SEO重点知识（2025全面版）
+date: 2025-10-28
+tags: [html,web,seo]
+---
+
 # 🌐 HTML 可访问性 & SEO 重点知识（2025 全面版）
 
 ---

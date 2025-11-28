@@ -1,8 +1,13 @@
-非常好 👍 你抓到关键点了。
-
-我来给你演示“**以后要换路径，只改一处就行**”到底是怎么实现的。
-
 ---
+title: python使用app.config
+date: 2025-10-28
+tags: [python]
+---
+
+
+# python使用app.config
+使用app.config“**以后要换路径，只改一处就行**”。
+
 
 ## 🎯 先看一个没用 `app.config` 的写法（不好维护）
 

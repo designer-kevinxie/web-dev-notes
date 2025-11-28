@@ -1,3 +1,8 @@
+---
+title: JS e.preventDefault()
+date: 2025-10-28
+tags: [js,web]
+---
 
 `e.preventDefault()` 是 JavaScript 中一个非常常用的语句，用来**阻止浏览器执行事件的默认行为**。
 

@@ -1,4 +1,10 @@
-# JSON-LD 数据
+---
+title: JSON-LD 数据 SEO
+date: 2025-10-28
+tags: [html,web,seo]
+---
+
+# JSON-LD 数据 SEO
 **JSON-LD数据**（全称 **JavaScript Object Notation for Linked Data**）——
 是现代网页中非常重要的一个 **SEO 和结构化信息标记方式**。
 下面我用清晰的方式帮你解释它的 **作用、原理和实际应用示例**👇

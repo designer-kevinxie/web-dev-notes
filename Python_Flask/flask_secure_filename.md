@@ -1,3 +1,10 @@
+---
+title: 标准Flask项目模板(一键脚本)
+date: 2025-10-28
+tags: [python,flask,VPS]
+---
+
+# flask secure_filename 安全命名
 
 **`secure_filename()`** 在很多情况下**非常有必要**，尤其是在**处理用户上传文件**时。
 

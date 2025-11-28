@@ -1,3 +1,10 @@
+---
+title: Linux 的 cat_eof用法
+date: 2025-10-28
+tags: [linux,VPS]
+---
+
+# Linux 的 cat_eof用法
 这个命令是 Linux 或 Unix shell（包括 bash、zsh 等）中用于**快速创建或覆盖文件内容**的一种常见且非常有用的技巧，被称为 **“here document”（在此文档）** 或 **“heredoc”**。
 
 ### 📜 命令的含义和作用
